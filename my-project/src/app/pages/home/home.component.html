@@ -1,0 +1,32 @@
+<button nz-button (click)="add()" nzType="primary">添加设备</button>
+<br />
+<br />
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>型号</th>
+            <th>制造日期</th>
+            <th>查看详细</th>
+            <th>删除</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.id }}</td>
+            <td>{{ data.model }}</td>
+            <td>{{ data.manufactureDate }}</td>
+            <td>
+                <a (click)="gotoDetail(data)">详细</a>
+            </td>
+            <td>
+                <a (click)="deleteData(data.id)">删除</a>
+            </td>
+        </tr>
+    </tbody>
+</nz-table>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="确认" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <p>是否删除数据！</p>
+    </ng-container>
+</nz-modal>

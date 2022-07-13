@@ -1,0 +1,43 @@
+<div class="layout">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>id</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input formControlName="id" [(ngModel)]="equipment.id" [disabled]="true" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>model</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="model" formControlName="model" [(ngModel)]="equipment.model" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>brand</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="brand" formControlName="brand" [(ngModel)]="equipment.brand" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>weight</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="weight" formControlName="weight" [(ngModel)]="equipment.weight" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>manufactureDate</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <nz-date-picker formControlName="manufactureDate" [(ngModel)]="equipment.manufactureDate">
+                </nz-date-picker>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control [nzXs]="{ span: 24, offset: 0 }" [nzSm]="{ span: 16, offset: 8 }">
+                <button nz-button nzType="primary">修改</button>
+            </nz-form-control>
+            <nz-form-control [nzXs]="{ span: 20, offset: 0 }" [nzSm]="{ span: 16, offset: 0 }">
+                <button nz-button (click)="goback()">返回</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>

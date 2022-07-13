@@ -1,0 +1,41 @@
+<div class="layout">
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>model</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="model" formControlName="model" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>brand</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="brand" formControlName="brand" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>weight</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <input nz-input id="weight" formControlName="weight" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>manufactureDate</nz-form-label>
+            <nz-form-control [nzSm]="16" [nzXs]="24">
+                <nz-date-picker formControlName="manufactureDate"></nz-date-picker>
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+            <nz-form-control [nzXs]="{ span: 20, offset: 0 }" [nzSm]="{ span: 16, offset: 8 }">
+                <button nz-button type="submit" nzType="primary">提交</button>
+            </nz-form-control>
+            <nz-form-control [nzXs]="{ span: 20, offset: 0 }" [nzSm]="{ span: 16, offset: 0 }">
+                <button nz-button type="button" nzType="primary" (click)="goBack()">返回</button>
+            </nz-form-control>
+        </nz-form-item>
+    </form>
+</div>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="确认" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+        <p>您的输入尚未保存，是否离开！</p>
+    </ng-container>
+</nz-modal>
